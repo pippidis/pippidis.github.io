@@ -1,0 +1,39 @@
+/* Course overview and detail pages share the site's restrained editorial layout. */
+.course-listing {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-5);
+  border-top: 1px solid var(--color-rule);
+  padding-block: var(--space-5);
+}
+.course-listing h2 { font-size: 1.6rem; }
+.course-listing h2 a { color: var(--color-ink); text-decoration: none; }
+.course-listing h2 a:hover { text-decoration: underline; }
+.course-listing p { margin-top: var(--space-2); }
+.course-status { font-size: var(--text-small); color: var(--color-muted); white-space: nowrap; }
+.course-back { display: inline-block; margin-bottom: var(--space-5); font-size: var(--text-small); }
+.course-section { border-top: 1px solid var(--color-rule); padding-block: var(--space-5); }
+.course-section h2 { margin-bottom: var(--space-3); }
+.course-section ul { margin: 0; padding-left: 1.2em; }
+.course-section li + li { margin-top: var(--space-2); }
+.course-resources { list-style: none; padding-left: 0 !important; }
+.course-resources li { padding-block: var(--space-3); }
+.course-resources span { margin-left: var(--space-3); font-size: var(--text-small); }
+.course-resources p, .materials-note { font-size: 0.9375rem; }
+.course-resources p { margin-top: var(--space-1); }
+.supervision-section { margin-top: var(--space-5); }
+.supervision-entry + .supervision-entry { margin-top: var(--space-5); }
+.supervision-entry p { margin-top: var(--space-1); }
+.supervision-context { color: var(--color-muted); font-size: var(--text-small); }
+@media (max-width: 720px) {
+  .course-listing { flex-direction: column; gap: var(--space-2); }
+}
+
+.course-facts { border-top: 1px solid var(--color-rule); padding-top: var(--space-5); }
+.course-facts > div { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: var(--space-4); margin-bottom: var(--space-3); }
+.course-facts dt { color: var(--color-muted); }
+.course-facts dd { margin: 0; }
+@media (max-width: 480px) {
+  .course-facts > div { grid-template-columns: 1fr; gap: var(--space-1); }
+}

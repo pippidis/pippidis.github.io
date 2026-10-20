@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pippidis.no/sitemap.xml
