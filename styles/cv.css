@@ -87,3 +87,8 @@
 .education-institutions { display: inline-block; margin-left: 0.65rem; font-size: var(--text-small); font-weight: 400; }
 .education-institutions a { font: inherit; white-space: nowrap; text-decoration: none; }
 .education-institutions a:hover { color: var(--color-ink); }
+
+@media (max-width: 720px) {
+  .cv-period { display: inline; }
+  .cv-period + .cv-period::before { content: " \00b7  "; }
+}

@@ -357,3 +357,22 @@ nav .contact-link {
   .heading-tools { order: 4; margin-top: var(--space-3); flex-direction: row; align-items: flex-start; gap: var(--space-3); flex-wrap: wrap; }
   .heading-tools .utility-detail { display: none; }
 }
+
+/* Compact mobile header; the menu remains in document flow when expanded. */
+.mobile-header-actions, .mobile-brand-label { display: none; }
+@media (max-width: 720px) {
+  .header-inner { min-height: 60px; padding-block: 6px; gap: 0; }
+  .identity-name, .monogram span { display: none; }
+  .mobile-brand-label { display: block; }
+  .monogram { margin: 0; font-size: 1.25rem; }
+  .mobile-header-actions { display: flex; align-items: center; gap: 4px; }
+  .mobile-header-actions a, .nav-toggle { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 0; }
+  #main-navigation { display: flex; flex-direction: column; align-items: stretch; gap: 0; padding-block: 8px; width: 100%; }
+  #main-navigation a { padding: 10px 0; }
+  #main-navigation .contact-link { display: none; }
+  .home-heading h1 { font-size: 1.8rem; }
+  .home-heading { margin-block: 24px; }
+  .hero-photo { height: 120px; }
+  .portrait-figure { display: none; }
+  .introduction { grid-template-columns: 1fr; margin-block: 24px; }
+}

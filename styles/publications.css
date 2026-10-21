@@ -241,69 +241,24 @@
   font-size: 0.875rem;
 }
 
+
+/* One action line on phones. Disclosure content spans the row without shifting
+   its summary; native details retains keyboard and screen-reader behaviour. */
 @media (max-width: 720px) {
-  .publication-row {
-    --action-height: 36px;
-    grid-template-columns: 40px minmax(0, 1fr);
-    column-gap: var(--space-3);
-    padding-bottom: var(--space-3);
-  }
-
-  .publication-actions {
-    grid-column: 2;
-    grid-row: 2;
-    min-height: var(--action-height);
-    align-items: center;
-  }
-
-  .citation-panel {
-    grid-column: 2;
-    grid-row: 3;
-    /* Share the preceding action line without moving Cite when it opens.
-       The expanded content stays in normal flow below that shared line. */
-    margin-top: calc(0px - var(--action-height) - var(--space-2));
-  }
-
-  .citation-panel > summary {
-    position: static;
-    width: max-content;
-    margin-left: auto;
-    min-height: var(--action-height);
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-  }
-
-  .citation-content {
-    padding: var(--space-3);
-  }
-
-  .publication-extras {
-    grid-column: 2;
-    grid-row: 4;
-    margin-top: 0;
-    justify-self: start;
-  }
-
-  .citation-panel:not([open]) { display: block; }
-
-  .publication-extras:has(.abstract-panel[open]),
-  .publication-extras:has(.doi-fallback:not([hidden])) {
-    grid-column: 2;
-    grid-row: 4;
-  }
+  .publication-row { grid-template-columns: 36px minmax(0, 1fr) max-content max-content; column-gap: 8px; padding-bottom: 12px; }
+  .publication-year { grid-column: 1; grid-row: 1; }
+  .publication-body { grid-column: 2 / -1; grid-row: 1; }
+  .publication-actions { grid-column: 2 / 3; grid-row: 2; padding: 0; gap: 8px; align-items: center; min-height: 36px; font-size: 0.75rem; }
+  .citation-panel, .citation-panel:not([open]), .publication-extras, .abstract-panel { display: contents; }
+  .citation-panel::details-content, .abstract-panel::details-content { display: contents; }
+  .citation-panel:not([open]) > :not(summary), .abstract-panel:not([open]) > :not(summary) { display: none; }
+  .citation-panel > summary { grid-column: 3; grid-row: 2; position: static; padding: 0; min-height: 36px; display: flex; align-items: center; gap: 3px; font-size: 0.75rem; }
+  .abstract-panel > summary { grid-column: 4; grid-row: 2; align-self: center; padding-block: 8px; font-size: 0.75rem; }
+  .citation-content, .abstract-content, .doi-status:not(:empty), .doi-fallback { grid-column: 1 / -1; grid-row: auto; margin-top: 0; }
+  .citation-content { padding: 12px; }
+  .abstract-content { font-size: var(--text-small); }
 }
-
 @media (max-width: 480px) {
-  .archive-tools {
-    grid-template-columns: 1fr;
-  }
-
-  .publication-body h3 {
-    font-size: 0.9375rem;
-  }
-
-  .citation-panel {
-    grid-column: 1 / -1;
-  }
+  .archive-tools { grid-template-columns: 1fr; }
+  .publication-body h3 { font-size: 0.9375rem; }
 }
