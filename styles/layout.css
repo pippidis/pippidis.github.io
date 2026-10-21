@@ -205,6 +205,23 @@ nav .contact-link {
 
 .footer-links a { white-space: nowrap; }
 
+.footer-details {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.footer-contact {
+  display: grid;
+  gap: var(--space-1);
+  scroll-margin-top: var(--space-5);
+}
+
+.footer-contact h2 {
+  font-family: var(--font-body);
+  font-size: inherit;
+  font-weight: 600;
+}
+
 .profile-link {
   font-size: var(--text-small);
   margin-top: var(--space-3);
