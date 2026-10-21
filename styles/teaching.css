@@ -23,7 +23,16 @@
 .course-resources p, .materials-note { font-size: 0.9375rem; }
 .course-resources p { margin-top: var(--space-1); }
 .supervision-section { margin-top: var(--space-5); }
-.supervision-entry + .supervision-entry { margin-top: var(--space-5); }
+.supervision-guide { margin-bottom: var(--space-5); }
+.supervision-guide p { margin-bottom: var(--space-2); }
+.supervision-guide > span { margin-left: var(--space-3); }
+.supervision-list { list-style: none; padding: 0 !important; }
+.supervision-list .supervision-entry { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: var(--space-4); border-top: 1px solid var(--color-rule); padding-block: var(--space-4); margin: 0; }
+.supervision-entry > div { grid-column: 2; }
+.supervision-entry h3 { font-size: 1rem; }
+.supervision-year { color: var(--color-muted); font-size: var(--text-small); }
+.supervision-details { margin-top: var(--space-2); font-size: var(--text-small); }
+.supervision-details summary { color: var(--color-accent); width: fit-content; }
 .supervision-entry p { margin-top: var(--space-1); }
 .supervision-context { color: var(--color-muted); font-size: var(--text-small); }
 @media (max-width: 720px) {
