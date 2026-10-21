@@ -41,6 +41,10 @@
   font-size: 0.875rem;
 }
 
+.cv-entry h3 a {
+  text-decoration: none;
+}
+
 .cv-entry p, .cv-entry a {
   font-size: var(--text-small);
 }
